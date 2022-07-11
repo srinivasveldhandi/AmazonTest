@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package Amazon;
+
+/**
+ * @author ADMIN
+ *
+ */
+public abstract class Page {
+
+}

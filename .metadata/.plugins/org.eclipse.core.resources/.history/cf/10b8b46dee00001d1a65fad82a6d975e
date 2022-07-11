@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package AmazonTests;
+
+/**
+ * @author ADMIN
+ *
+ */
+public class BaseTest {
+
+	WebDriver driver;
+	public Page page;
+	
+	@BeforeMethod
+	@Parameters(value="browser")
+	public void setUpTest(String browser) {
+		if(browser.equals("chrome")) {
+			WebDriverManager.
+		}
+	}
+	
+}

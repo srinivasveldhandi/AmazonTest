@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package Amazon;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+/**
+ * @author ADMIN
+ *
+ */
+public abstract class Page {
+	
+	public WebDriver driver;
+	public WebDriverWait wait;
+	
+	public abstract String getPageTitle();
+	
+	public abstract String getPageHeader();
+	
+	public abstract WebElement getElement();
+	
+	
+}
