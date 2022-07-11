@@ -3,6 +3,11 @@
  */
 package AmazonTests;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,6 +26,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	WebDriver driver;
 	public Page page;
+	Properties prop;	
+	FileInputStream objfile; 
 	
 	@BeforeMethod
 	@Parameters(value="browser")
@@ -37,7 +44,20 @@ public class BaseTest {
 	
 		}
 		driver.get("amazon.com");
-		page = new BasePage(driver);	
+		page = new BasePage(driver);
+		
+		prop = new Properties();		
+		try {
+			objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\Config\\Config.properties");
+		} catch (FileNotFoundException e1) {		
+			e1.printStackTrace();
+		}
+		try {
+			prop.load(objfile);
+		} catch (IOException e) {			
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@AfterMethod
